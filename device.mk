@@ -104,6 +104,16 @@ PRODUCT_PACKAGES += \
 	lights.hi3635 \
 	power.hi3635
 
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/clatd.conf:system/etc/clatd.conf \
+    $(LOCAL_PATH)/prebuilts/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/prebuilts/gpsconfig.xml:system/etc/gpsconfig.xml \
+    $(LOCAL_PATH)/prebuilts/gpsconfig_beta.xml:system/etc/gpsconfig_beta.xml \
+    $(LOCAL_PATH)/prebuilts/gps47531config_cl.xml:system/etc/gps47531config_cl.xml \
+    $(LOCAL_PATH)/prebuilts/gps47531config_cl_beta.xml:system/etc/gps47531config_cl_beta.xml \
+    $(LOCAL_PATH)/prebuilts/gps47531config.xml:system/etc/gps47531config.xml
+
 # AUDIO
 PRODUCT_PACKAGES += \
 	audio.primary.default \
