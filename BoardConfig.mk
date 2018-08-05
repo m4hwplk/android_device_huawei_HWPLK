@@ -12,16 +12,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 BLOCK_BASED_OTA := false
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
 LOCAL_PATH := device/huawei/HWPLK
-
 
 # HARDWARE CLASS
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS := \
     hardware/cyanogen/cmhw \
     $(LOCAL_PATH)/cmhw
+
 # WEBGL
 ENABLE_WEBGL := true
 
@@ -81,15 +82,10 @@ BOARD_EGL_CFG := $(LOCAL_PATH)/gpu/egl.cfg
 # AUDIO
 TARGET_PROVIDES_LIBAUDIO := true
 BOARD_USES_ALSA_AUDIO := true
-#BOARD_USES_TINY_ALSA_AUDIO := true
 BOARD_USES_GENERIC_AUDIO := false
-#BUILD_WITH_ALSA_UTILS := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 
 # RIL
-#COMMON_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
-#PROTOBUF_SUPPORTED := true
-#TARGET_RIL_VARIANT := proprietary
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril/
 SIM_COUNT := 2
 
@@ -121,7 +117,6 @@ BOARD_CUSTOM_BT_CONFIG := $(LOCAL_PATH)/bluetooth/vnd_hwgra.conf
 
 # CPU/ARCH
 TARGET_ARCH := arm64
-#TARGET_ARM_TYPE := arm64
 TARGET_BOARD_PLATFORM := hi3635
 BOARD_VENDOR_PLATFORM := hi3635
 HISI_TARGET_PRODUCT := hi3635
@@ -136,21 +131,15 @@ TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
-#we have big.LITTLE architecture with 2 sets
 ENABLE_CPUSETS := true
-#Not sure
 ARCH_ARM_HAVE_TLS_REGISTER := true
 ARCH_ARM_HAVE_NEON := true
 ARCH_ARM_HIGH_OPTIMIZATION := true
-#ANDROID_64=true
 TARGET_USES_64_BIT_BINDER := true
 TARGET_IS_64_BIT := true
 TARGET_USES_HISI_DTIMAGE := true
 TARGET_SUPPORTS_32_BIT_APPS := true
 TARGET_SUPPORTS_64_BIT_APPS := true
-
-#TARGET_KERNEL_SOURCE --> Shared source... Well it's not...
-#The kernel has harcoded stuff in it which requires the source to be named "kernel"
 TARGET_PREBUILT_KERNEL := device/huawei/HWPLK/kernel
 
 # KERNEL CONFIG
@@ -171,7 +160,6 @@ BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
 
 # INIT
 TARGET_PROVIDES_INIT_TARGET_RC := true
-#TARGET_PROVIDES_INIT_RC := true
 
 # PROPERTIES
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
@@ -192,5 +180,3 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # TAP TO WAKE
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchscreen/wakeup_gesture_enable"
-
-# inherit from the proprietary version
