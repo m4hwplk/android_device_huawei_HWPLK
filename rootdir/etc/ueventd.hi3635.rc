@@ -19,7 +19,7 @@
 /dev/ttySPI12 	0440 	root root
 /dev/ttySPI13 	0440 	root root
 /dev/ttySPI14 	0440 	root root
-
+			
 /dev/video0					0660  system 	camera
 /dev/video1					0660  system 	camera
 /dev/video2					0660  system 	camera
@@ -38,17 +38,31 @@
 /dev/media6					0660  system 	camera
 /dev/media7					0660  system 	camera
 
-/dev/v4l-subdev0					0660  system 	camera
-/dev/v4l-subdev1					0660  system 	camera
-/dev/v4l-subdev2					0660  system 	camera
-/dev/v4l-subdev3					0660  system 	camera
-/dev/v4l-subdev4					0660  system 	camera
-/dev/v4l-subdev5					0660  system 	camera
-/dev/v4l-subdev6					0660  system 	camera
-/dev/v4l-subdev7					0660  system 	camera
+/dev/v4l-subdev0				0660  system 	camera
+/dev/v4l-subdev1				0660  system 	camera
+/dev/v4l-subdev2				0660  system 	camera
+/dev/v4l-subdev3				0660  system 	camera
+/dev/v4l-subdev4				0660  system 	camera
+/dev/v4l-subdev5				0660  system 	camera
+/dev/v4l-subdev6				0660  system 	camera
+/dev/v4l-subdev7				0660  system 	camera
 
-/dev/dsm							0660  system	dsm
-/dev/block/mmcblk0p4                0660  system    system
-/dev/block/mmcblk0p19					0660  system 	system
-/dev/hifi_misc                                          0660  root      audio
-/dev/tspdrv               0660   system       system
+/dev/dsm					0660  system	system
+/dev/block/mmcblk0p4                		0660  system    system
+/dev/block/mmcblk0p19				0660  system 	system
+/dev/hifi_misc                                  0660  root      audio
+/dev/tspdrv               			0660   system       system
+
+/dev/pn544                			0660   nfc        nfc
+
+/dev/imgsysbrg_vdec0				660 system camera
+/dev/jpu					660 media camera
+/dev/k3vpp0					660 media media
+
+/dev/ttyAMA5					0660 radio radio
+/dev/vmodem					0660 radio radio
+
+/dev/ear_pa					0660 media media
+/dev/tfa9895					0660 media media
+
+/dev/nve0					0770 root system
