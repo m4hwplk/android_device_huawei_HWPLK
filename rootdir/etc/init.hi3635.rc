@@ -969,6 +969,10 @@ service HwCamCfgSvr /system/bin/HwCamCfgSvr hi3635 PLK
     group audio camera inet net_bt net_bt_admin net_bw_acct wakelock system
     disabled
 
+service fingerprintd /system/bin/fingerprintd
+    class late_start
+    user system	
+
 service thermal-daemon /system/bin/thermal-daemon
     class main
     user system 
@@ -1019,6 +1023,12 @@ on property:vold.decrypt=trigger_default_encryption
 
 on property:vold.decrypt=trigger_shutdown_framework
     trigger data_not_ready
+
+on property:persist.sys.fingersense=1
+    write /sys/devices/platform/huawei_sensor/set_fingersense_enable 1
+
+on property:persist.sys.fingersense=0
+    write /sys/devices/platform/huawei_sensor/set_fingersense_enable 0	
 
 on start_main_class
     class_start main
