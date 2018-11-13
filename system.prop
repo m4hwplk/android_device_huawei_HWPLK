@@ -26,17 +26,15 @@ ro.am.reschedule_service=true
 ro.config.enable_rcc=true
 
 # Ril
-ro.config.dsds_mode=umts_gsm
-persist.radio.modem.cap=89994
-persist.dsds.enabled=true
-rild.rild1_ready_to_start=true
-rild.libargs1=-m modem1
+ro.config.dsds_mode=umts
+ro.multi.rild=false
 rild.libpath=/system/lib64/libbalong-ril.so
-ro.config.hw_dsda=true
-ro.multi.rild=true
+ro.telephony.default_network=9
 rild.libargs=-m modem0
-persist.radio.multisim.config=dsda
-ro.telephony.default_network=9,9
+persist.radio.modem.cap=899B4
+persist.dsds.enabled=false
+ro.config.hw_dsda=false
+rild.rild1_ready_to_start=false
 ro.telephony.ril_class=HwHisiRIL
 
 persist.radio.apm_sim_not_pwdn=1
